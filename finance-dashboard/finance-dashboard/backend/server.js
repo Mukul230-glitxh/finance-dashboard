@@ -9,7 +9,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'https://finance-dashboard-7xy4.onrender.com',
+    origin: 'https://finance-dashboard-tau-hazel.vercel.app',
     credentials: true,
   })
 );app.use(express.json());
