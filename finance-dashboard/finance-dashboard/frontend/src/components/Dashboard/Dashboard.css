@@ -320,9 +320,149 @@ body {
 .delete-btn:hover { color: #f44336; background: #ffebee; }
 
 @media (max-width: 768px) {
-  .sidebar { width: 60px; }
-  .sidebar-logo span { display: block; }
-  .sidebar-logo .logo-text { display: none; }
-  .main-content { margin-left: 60px; padding: 16px; }
-  .charts-row { grid-template-columns: 1fr; }
+
+  /* Hide sidebar, use bottom nav instead */
+  .sidebar {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    z-index: 100;
+  }
+
+  .sidebar-logo {
+    display: none;
+  }
+
+  .sidebar nav {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    padding: 0;
+    justify-content: space-around;
+  }
+
+  .sidebar nav button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 4px;
+    font-size: 10px;
+    margin: 0;
+    border-radius: 0;
+    gap: 2px;
+  }
+
+  .sidebar-user {
+    display: none;
+  }
+
+  /* Main content fills full width */
+  .main-content {
+    margin-left: 0;
+    padding: 12px 12px 80px 12px;
+  }
+
+  /* Header */
+  .dashboard-header {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 8px;
+  }
+
+  .dashboard-header h2 {
+    font-size: 18px;
+  }
+
+  .add-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  /* Summary cards — 2 per row */
+  .summary-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .card-label {
+    font-size: 10px;
+  }
+
+  /* Charts stack vertically */
+  .charts-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .chart-card {
+    padding: 14px;
+  }
+
+  /* Tables — make scrollable horizontally */
+  .section-card {
+    padding: 14px;
+    overflow-x: auto;
+  }
+
+  .data-table {
+    min-width: 500px;
+    font-size: 12px;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 8px 6px;
+  }
+
+  /* Stocks grid — 2 per row */
+  .stocks-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .stock-card {
+    padding: 12px;
+  }
+
+  .stock-price {
+    font-size: 16px;
+  }
+
+   M/*odal full screen on mobile */
+  .modal-card {
+    max-width: 100%;
+    margin: 10px;
+    padding: 20px;
+  }
+
+  .modal-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .stocks-grid {
+    grid-template-columns: 1fr;
+  }
 }
